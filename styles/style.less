@@ -58,7 +58,6 @@ a {
     li {
       display: inline;
       margin-right: 6em;
-      transition: 0.1s all;
       &:last-child {
         margin-right: 0;
       }
@@ -73,6 +72,30 @@ a {
   }
 }
 
+// HUD Nav
+.nav {
+  .pageUp,.pageDn {
+    position: fixed;
+    width: 68px;
+    height: 68px;
+    margin-left: -68px/2;
+    left:50%;
+    border-radius: 50%;
+    border: 1px solid @light;
+    background-color: fade(@light,30%);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .pageUp {
+    top: 90px;
+  }
+  .pageDn {
+    bottom: 20px;
+  }
+}
+
 @media (max-width: 1000px) {
   .navbar ul {
     margin: 22px 4em 0;
@@ -82,4 +105,14 @@ a {
     }
   }
 }
-@media (max-width: 800px) {}
+@media (max-width: 800px) {
+  header {
+    visibility: hidden;
+  }
+
+  .nav {
+    .pageUp {
+      top: 20px;
+    }
+  }
+}

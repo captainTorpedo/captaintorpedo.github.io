@@ -44,7 +44,6 @@ a:hover {
 .navbar ul li {
   display: inline;
   margin-right: 6em;
-  transition: 0.1s all;
   border-top: 4px double transparent;
   border-bottom: 4px double transparent;
 }
@@ -56,6 +55,27 @@ a:hover {
   border-top: 4px double #3c454c;
   border-bottom: 4px double #3c454c;
 }
+.nav .pageUp,
+.nav .pageDn {
+  position: fixed;
+  width: 68px;
+  height: 68px;
+  margin-left: -34px;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid #3c454c;
+  background-color: rgba(60, 69, 76, 0.3);
+}
+.nav .pageUp:hover,
+.nav .pageDn:hover {
+  cursor: pointer;
+}
+.nav .pageUp {
+  top: 90px;
+}
+.nav .pageDn {
+  bottom: 20px;
+}
 @media (max-width: 1000px) {
   .navbar ul {
     margin: 22px 4em 0;
@@ -65,5 +85,10 @@ a:hover {
   }
 }
 @media (max-width: 800px) {
-  
+  header {
+    visibility: hidden;
+  }
+  .nav .pageUp {
+    top: 20px;
+  }
 }
