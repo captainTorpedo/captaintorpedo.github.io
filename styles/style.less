@@ -1,0 +1,85 @@
+// Captain Torpedo Styles
+
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+
+// Colors
+@dark: #101010;
+@low:  #1f2529;
+@mid:  #3c454c;
+@light:#3c454c;
+@high: #bec0c1;
+
+// Base
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald";
+  background-color: @dark;
+  background-image: url("../images/noise.png");
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Navbar
+@navbarColor: @low;
+.navbar {
+  color: @high;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  height: 70px;
+  box-shadow: inset 0 -1px rgba(255,255,255,0.08),0 2px 2px rgba(0,0,0,1);
+  width: 100%;
+  background-color: @navbarColor;
+  background-image: url("../images/ct-sm-blue.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+
+  ul {
+    white-space: nowrap;
+    margin: 22px 8em 0;
+    padding: 0;
+    &.left {
+      position: absolute;
+      right: 50%;
+    }
+    &.right {
+      position: absolute;
+      left: 50%;
+    }
+    li {
+      display: inline;
+      margin-right: 6em;
+      transition: 0.1s all;
+      &:last-child {
+        margin-right: 0;
+      }
+      border-top:    4px double transparent;
+      border-bottom: 4px double transparent;
+
+      &.selected,&:hover {
+        border-top:    4px double @light;
+        border-bottom: 4px double @light;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .navbar ul {
+    margin: 22px 4em 0;
+
+    li {
+      margin-right: 1em;
+    }
+  }
+}
+@media (max-width: 800px) {}
