@@ -1,9 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Oswald";
+  color: #bec0c1;
   background-color: #101010;
   background-image: url("../images/noise.png");
 }
@@ -15,6 +17,7 @@ a:hover {
   opacity: 1;
 }
 .navbar {
+  z-index: 100;
   color: #bec0c1;
   font-size: 18px;
   text-transform: uppercase;
@@ -55,27 +58,6 @@ a:hover {
   border-top: 4px double #3c454c;
   border-bottom: 4px double #3c454c;
 }
-.nav .pageUp,
-.nav .pageDn {
-  position: fixed;
-  width: 68px;
-  height: 68px;
-  margin-left: -34px;
-  left: 50%;
-  border-radius: 50%;
-  border: 1px solid #3c454c;
-  background-color: rgba(60, 69, 76, 0.3);
-}
-.nav .pageUp:hover,
-.nav .pageDn:hover {
-  cursor: pointer;
-}
-.nav .pageUp {
-  top: 90px;
-}
-.nav .pageDn {
-  bottom: 20px;
-}
 @media (max-width: 1000px) {
   .navbar ul {
     margin: 22px 4em 0;
@@ -91,4 +73,103 @@ a:hover {
   .nav .pageUp {
     top: 20px;
   }
+}
+.nav .pageUp,
+.nav .pageDn {
+  z-index: 99;
+  position: fixed;
+  width: 68px;
+  height: 68px;
+  margin-left: -34px;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid #3c454c;
+  background-color: rgba(60, 69, 76, 0.3);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.nav .pageUp:hover,
+.nav .pageDn:hover {
+  cursor: pointer;
+}
+.nav .pageUp,
+.nav .pageDn {
+  transition: 0.2s opacity;
+}
+.nav .pageUp {
+  top: 90px;
+  background-image: url("../images/arrow_up.png");
+  opacity: 0;
+}
+.nav .pageDn {
+  bottom: 20px;
+  background-image: url("../images/arrow_dn.png");
+}
+article {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: 90% auto;
+}
+article#hero {
+  background-image: url("../images/hero0.png");
+  background-size: 800px auto;
+}
+article#captainTorpedo {
+  background-image: url("../images/hero1.png");
+}
+article#captainTorpedo .insignia {
+  background-image: url("../images/torpedo.png");
+}
+article#schmokoff {
+  background-image: url("../images/hero2.png");
+}
+article#schmokoff .insignia {
+  background-image: url("../images/squid.png");
+}
+article#theStruggle {
+  background-image: url("../images/hero3.png");
+}
+article .overlay {
+  position: absolute;
+  top: 50%;
+  margin-top: -260px;
+  width: 340px;
+  text-align: center;
+  text-shadow: 0 0 5px black;
+}
+article .overlay .insignia {
+  width: 100%;
+  height: 200px;
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+article:nth-child(odd) .overlay {
+  left: 10%;
+}
+article:nth-child(even) .overlay {
+  right: 10%;
+}
+h1 {
+  font-family: "Oswald";
+  font-weight: 500;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+h2 {
+  font-family: "Oswald";
+  font-weight: 300;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+h3 {
+  font-family: "Oswald";
+  font-weight: 300;
+  font-size: 18px;
+  text-transform: ;
 }
