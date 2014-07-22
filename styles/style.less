@@ -95,6 +95,9 @@ a {
       top: 20px;
     }
   }
+  .insignia {
+    display: none;
+  }
 }
 
 // HUD Nav
@@ -192,7 +195,25 @@ article {
   }
 }
 
+.overlay.center {
+  position: static;
+  margin: 0 auto 0;
+  padding-top: 200px;
+}
+
 // Typography
+.br {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 0px;
+  width: 30%;
+  margin: 0 auto;
+  border-top: 1px solid white;
+}
+h1,h2,h3 {
+  margin: 12px 0
+}
 h1 {
   font-family: "Oswald";
   font-weight: 500;
@@ -210,4 +231,30 @@ h3 {
   font-weight: 300;
   font-size: 18px;
   text-transform: ;
+}
+.credits {
+  width: 100%;
+  text-align: center;
+  ul {
+    padding: 0 10px;
+    width: 120px;
+    margin: 0;
+    display: inline-block;
+    height: 150px;
+    border-right: 1px solid @high;
+    list-style: none;
+    &:last-child {
+      border: none;
+    }
+    li {
+      line-height: 32px;
+      text-transform: uppercase;
+      &:first-child {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
 }
