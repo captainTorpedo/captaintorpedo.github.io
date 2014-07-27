@@ -19,7 +19,8 @@ $( document ).ready(function() {
     else {
       $(".pageUp").css('opacity',1);
     }
-    if ($(document).height() - $(window).height() - $(window).scrollTop() <= 0) {
+    debugger;
+    if ($(document).height() - $(window).height() - $(window).scrollTop() <= 156) {
       $(".pageDn").css('opacity',0);
     }
     else {
@@ -49,9 +50,9 @@ $( document ).ready(function() {
   }, 500);
 
   setTimeout(function(){
-    if ($(document).height() - $(window).height() - $(window).scrollTop() > 0) {
-      $(".pageDn").css("opacity", 1);
-    }
+      if ($(document).height() - $(window).height() - $(window).scrollTop() !== 156) {
+        $(".pageDn").css("opacity", 1);
+      }
   }, 2000);
 
   // setTimeout(function() {
