@@ -29,14 +29,40 @@ $( document ).ready(function() {
   });
 
   $(".pageUp").click(function() {
+    $("body").removeClass("stopScrolling");
     $('html, body').animate({
       scrollTop: (Math.floor($(document).scrollTop()/$(window).height())-1)*$(window).height()
     }, 100);
+      $("body").addClass("stopScrolling");
   });
   $(".pageDn").click(function() {
+    $("body").removeClass("stopScrolling");
     $('html, body').animate({
       scrollTop: (Math.floor($(document).scrollTop()/$(window).height())+1)*$(window).height()
     }, 100);
+    $("body").addClass("stopScrolling");
   });
+  
+  $("body").addClass("stopScrolling");
+  setTimeout(function(){
+    $("#hero").css("opacity", 1);
+  }, 500);
+
+  setTimeout(function(){
+    $(".pageDn").css("opacity", 1);
+  }, 2000);
+
+  // setTimeout(function() {
+  //   setInterval(function() {
+  //     $(".pageDn").css("opacity", 0);  
+  //   }, 2000);
+  //   setTimeout(function() {
+  //     setInterval(function() {
+  //       $(".pageDn").css("opacity", 1);
+  //     }, 2000);
+  //   }, 1000);
+  // }, 2000);
+
+  // $("#hero").animate({opacity:1}, 10000);
 });
 

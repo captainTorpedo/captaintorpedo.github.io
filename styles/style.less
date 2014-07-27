@@ -21,6 +21,10 @@ html, body {
   background-image: url("../images/noise.png");
 }
 
+.stopScrolling {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: inherit;
@@ -120,7 +124,7 @@ a {
     }
   }
   .pageUp,.pageDn {
-    transition: 0.2s opacity;
+    transition: 1s opacity;
   }
   .pageUp {
     top: 90px;
@@ -130,6 +134,7 @@ a {
   .pageDn {
     bottom: 20px;
     background-image: url("../images/arrow_dn.png");
+    opacity: 0;
   }
 }
 
@@ -142,30 +147,43 @@ article {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  background-size: 90% auto;
   &#hero {
     background-image: url("../images/hero0.png");
     background-size: 800px auto;
+    -webkit-transition: 2s all;
+    -moz-transition: 2s all;
+    -o-transition: 2s all;
+    transition: 2s all;
+    opacity: 0;
   }
   &#captainTorpedo {
     background-image: url("../images/hero1.png");
+    background-size: 75% auto;
+    margin-left: -100px;
+    margin-top: 60px;
     .insignia {
       background-image: url("../images/torpedo.png");
     }
   }
   &#schmokoff {
     background-image: url("../images/hero2.png");
+    background-size: 75% auto;
+    margin-left: 200px;
+    margin-top: -80px;
     .insignia {
       background-image: url("../images/squid.png");
     }
   }
   &#theStruggle {
     background-image: url("../images/hero3.png");
+    background-size: 70% auto;
+    margin-top: 50px;
+    margin-left: -150px;
   }
 
   .overlay {
     position: absolute;
-    top: 50%;
+    top: 100%;
     margin-top:-260px;
     width: 340px;
     text-align: center;
@@ -184,13 +202,15 @@ article {
 article {
   &:nth-child(odd) {
     .overlay {
-      left: 10%;
+      left: 68%;
+      top:50%;
     }
   }
 
   &:nth-child(even) {
     .overlay {
-      right: 10%;
+      right: 77%;
+      top: 58%;
     }
   }
 }
