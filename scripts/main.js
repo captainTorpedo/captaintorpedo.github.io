@@ -45,30 +45,15 @@ $( document ).ready(function() {
   });
   
   $("body").addClass("stopScrolling");
-  $(window).load(function() {
-    setTimeout(function(){
-      $("#hero").css("opacity", 1);
-    }, 500);
 
-    setTimeout(function(){
-        if ($(document).height() - $(window).height() - $(window).scrollTop() !== 156) {
-          $(".pageDn").css("opacity", 1);
-        }
-    }, 1500);
-  }); 
+  setTimeout(function(){
+    $("#hero").css("opacity", 1);
+  }, 500);
 
-
-  // setTimeout(function() {
-  //   setInterval(function() {
-  //     $(".pageDn").css("opacity", 0);  
-  //   }, 2000);
-  //   setTimeout(function() {
-  //     setInterval(function() {
-  //       $(".pageDn").css("opacity", 1);
-  //     }, 2000);
-  //   }, 1000);
-  // }, 2000);
-
-  // $("#hero").animate({opacity:1}, 10000);
+  setTimeout(function(){
+      if ($(document).height() - $(window).height() - $(window).scrollTop() !== 156) {
+        $(".pageDn").css("opacity", 1);
+      }
+  }, 1500);
 });
 
