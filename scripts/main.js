@@ -47,13 +47,13 @@ $( document ).ready(function() {
   $("body").addClass("stopScrolling");
   setTimeout(function(){
     $("#hero").css("opacity", 1);
-  }, 1500);
+  }, 500);
 
   setTimeout(function(){
       if ($(document).height() - $(window).height() - $(window).scrollTop() !== 156) {
         $(".pageDn").css("opacity", 1);
       }
-  }, 2500);
+  }, 1500);
 
   // setTimeout(function() {
   //   setInterval(function() {
